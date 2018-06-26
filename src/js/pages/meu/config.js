@@ -1,0 +1,31 @@
+export const tabConfig = [{
+    icon: '&#xe660;',
+    name: "首页",
+    key: 'home',
+    src: `${weex.config.eros.jsServer}/dist/js/pages/MeU/home/index.js`,
+    visibility: 'visible'
+}, {
+    icon: '&#xe65c;',
+    name: "发现",
+    key: 'topic',
+    src: `${weex.config.eros.jsServer}/dist/js/pages/MeU/topic/index.js`,
+    visibility: 'hidden'
+}, {
+    icon: '&#xe66a;',
+    name: "目的地",
+    key: 'destination',
+    src: `${weex.config.eros.jsServer}/dist/js/pages/MeU/destination/index.js`,
+    visibility: 'hidden'
+}, {
+    icon: '&#xe69d;',
+    name: "行程",
+    key: 'trip',
+    src: `${weex.config.eros.jsServer}/dist/js/pages/MeU/trip/index.js`,
+    visibility: 'hidden'
+}, {
+    icon: '&#xe639;',
+    name: "我的",
+    key: 'my',
+    src: `${weex.config.eros.jsServer}/dist/js/pages/MeU/my/index.js`,
+    visibility: 'hidden'
+}]
