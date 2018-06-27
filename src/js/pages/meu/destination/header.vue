@@ -1,29 +1,53 @@
 <template>
     <div class="wrapper">
-        <div class="left">
-            <!-- <text class="leftTxt" v-if="leftBtn">{{leftBtn.name}}</text> -->
-            <text class="ic iconfont">&#xe6ac;</text>
-        </div>
-        <text class="tlt">{{title}}</text>
+        <text class="search iconfont" @click="jumpWeb()">&#xe65c; 景点/酒店/美食/娱乐</text>
         <div class="right">
-            <text class="ic iconfont">&#xe713;</text>
-            <!-- <text class="rightTxt" v-if="rightBtn">{{rightBtn.name}}</text> -->
+            <text class="ic iconfont2">&#xe713;</text>
         </div>
     </div>
 </template>
 <script>
 export default {
-    props: ['title', 'leftBtn', 'rightBtn'],
+    props: [],
+    data: () => ({
+      value: ''
+    }),
+    methods: {
+        jumpWeb(_url) {
+            this.$router.toWebView({
+                url: _url,
+                title: '',
+                navShow: true,
+            })
+        }
+
+        }
 }
 </script>
 <style scoped>
+.search {
+    text-align: center;
+    color: #666;
+    font-weight: 300;
+    flex: 1;
+    height: 70px;
+    font-size: 30px;
+    padding-top: 19px;
+    top: 16px;
+    left: 20px;
+    background-color: #ededed;
+    border-radius: 8px;
+}
 .iconfont {
+    font-family: iconfont;
+}
+.iconfont2 {
     font-family: iconfont2;
 }
 .wrapper {
+    display: flex;
     height: 100px;
-    /* background-color:rgb(253,212,0); */
-    background-color:rgb(253,212,0);
+    background-color:rgb(253,212,0);   
     opacity: .99;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -36,24 +60,9 @@ export default {
     left:40px;
     font-size: 40px;
 }
-.tlt {
-    flex: 1;
-    font-size: 40px;
-    padding-top: 30px;
-    color: #333;
-    text-align: center;
-}
-
-.left,
 .right {
     height: 80px;
     width: 120px;
     padding-top: 10px;
-}
-
-.leftTxt,
-.rightTxt {
-    font-size: 30px;
-    text-align: center;
 }
 </style>
